@@ -33,19 +33,29 @@
             success: function (data) {
                 var $Icon = data.weather[0].icon.substr(0, 2); // 0인덱스 번호부터 두글자 04d => 04
                 var $Temp = Math.floor(data.main.temp) + "℃"; // round-반올림, ceil-올림, floor-버림
+                var $hTemp = "최고 " + Math.floor(data.main.temp_max) + "℃"; // round-반올림, ceil-올림, floor-버림
+                var $mTemp = "최저 " + Math.floor(data.main.temp_min) + "℃"; // round-반올림, ceil-올림, floor-버림
                 var $city = data.name;
                 // alert(weatherIcon[$Icon]);
                 $('.currIcon').append(`<i class="${weatherIcon[$Icon]}"></i>`);
                 // $('.currIcon').append('<i class="'+weatherIcon[$Icon]+'">');
                 $(".currTemp").prepend($Temp);
+                $(".maxTemp").prepend($hTemp);
+                $(".minTemp").prepend($mTemp);
                 $(".city").append($city)
             }
         });
     </script>
     <style>
+        * {margin: 0;
+        padding: 0;}
         .weather {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             width: 300px;
-            height: 150px;
+            height: 300px;
             text-align: center;
             background: cornflowerblue;
             color: #fff;
@@ -61,6 +71,7 @@
 
         .weather>div.currIcon,
         .weather>div.currTemp {
+            margin-top: 25px;
             font-size: 50px;
 
         }
@@ -76,6 +87,8 @@
     <div class="weather">
         <div class="currIcon"></div>
         <div class="currTemp"></div>
+        <div class="maxTemp"></div>
+        <div class="minTemp"></div>
         <div class="city">도시: </div>
     </div>
     <!-- <h1><i class="fas fa-sun"></i></h1> -->
