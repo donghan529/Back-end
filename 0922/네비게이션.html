@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내비게이션</title>
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        /* 초기화 */
+        body {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 네비게이션 */
+        nav {
+            background: blue;
+            height: 120px;
+        }
+        .main {
+            width: 1200px;
+        }
+        .main {
+            display: flex;
+            justify-content: end;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .main>li {
+            height: 160px;
+            background: yellow;
+            padding: 20px;
+        }
+
+        .sub {
+            text-align: center;
+            /* display: none; */
+        }
+        /* 섹션1 */
+        #sec1 {
+            background: red;
+            height: 300px;
+        }
+        #sec2 {
+            height: 150px;
+        }
+        #sec2 div{
+            float: left;
+            height: 150px;
+            width: 33.33%;
+            background: plum;
+        }
+        footer {
+            height: 120px;
+        }
+
+        footer div:nth-child(1) {
+            background: darkred;
+            width: 200px;
+        }
+
+
+    </style>
+    <script>
+        // $(function(){
+        //     $(this).mouseenter(function(){
+        //         $(".sub").attr("display", "none");
+        //         $(".sub").eq(idx).style("display", "block");
+        //     });
+        // });
+    </script>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <ul class="main">
+                <li>
+                    <a href="#">MENU-1</a>
+                    <ul class="sub">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MENU-2</a>
+                    <ul class="sub">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MENU-3</a>
+                    <ul class="sub">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MENU-4</a>
+                    <ul class="sub">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- //.main -->
+        </nav> <!-- //nav -->
+        <div id="sec1"></div>
+        <div id="sec2">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <footer>
+            <div></div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
