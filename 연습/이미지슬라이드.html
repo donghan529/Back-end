@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div img {
+            position: absolute;
+            left: 100%;
+        }
+
+        div img:first-child {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="images/slide1.jpg" alt="이미지1">
+        <img src="images/slide2.jpg" alt="이미지2">
+        <img src="images/slide3.jpg" alt="이미지3">
+    </div>
+    <script>
+        let img = document.querySelectorAll("img");
+        for (let i = 0; i <= img.length; i++) {
+            img[i].style.left = 0;
+            setInterval(function () {
+                img[i].style.left = '100%';
+                // if (i == 2) i = 0;
+            }, 3000)
+        }
+    </script>
+</body>
+
+</html>

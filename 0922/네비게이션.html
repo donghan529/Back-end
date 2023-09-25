@@ -29,60 +29,95 @@
 
         /* 네비게이션 */
         nav {
+            position: fixed;
             background: blue;
             height: 120px;
         }
+
         .main {
             width: 1200px;
         }
+
         .main {
             display: flex;
+            height: 120px;
             justify-content: end;
             flex-wrap: nowrap;
             align-items: center;
         }
+
         .main>li {
-            height: 160px;
             background: yellow;
+            height: 50px;
             padding: 20px;
         }
 
         .sub {
             text-align: center;
-            /* display: none; */
         }
+
+        .sub>li {
+            background-color: #fff;
+            width: 100%;
+        }
+
         /* 섹션1 */
         #sec1 {
             background: red;
             height: 300px;
         }
+
         #sec2 {
             height: 150px;
         }
-        #sec2 div{
+        #sec2::after {
+            content: "";
+            display: block;
+        }
+
+        #sec2 div {
             float: left;
             height: 150px;
             width: 33.33%;
             background: plum;
+            border: 1px solid red;
         }
+
         footer {
+            display: flex;
+            position: relative;
             height: 120px;
-        }
-
-        footer div:nth-child(1) {
             background: darkred;
-            width: 200px;
+        }
+        .one {width: 30%;}
+        .two {
+            border: 1px solid red;
+            width: 70%;
+            background: #000;
+        }
+        .two div {
+            border: 1px solid red;
+            height: 60px
         }
 
 
+        
     </style>
     <script>
-        // $(function(){
-        //     $(this).mouseenter(function(){
-        //         $(".sub").attr("display", "none");
-        //         $(".sub").eq(idx).style("display", "block");
-        //     });
-        // });
+        $(function () {
+            $(".sub").hide();
+            $(".main>li").mouseover(function () {
+                var i = $(this).index();
+                // console.log(i);
+                $(".sub").eq(i).show();
+            });
+            $(".main>li").mouseleave(function () {
+                var i = $(this).index();
+                // console.log(i);
+                $(".sub").eq(i).hide(); 
+            });
+
+        });
     </script>
 </head>
 
@@ -135,13 +170,21 @@
             <div></div>
         </div>
         <footer>
-            <div></div>
-            <div>
+            <div class="one"></div>
+            <div class="two">
                 <div></div>
                 <div></div>
             </div>
         </footer>
     </div>
+    <script>
+        // $(".main>li").mouseenter(function () {
+        //     var i = $(this).index();
+        //     console.log(i);
+        //     $(".sub").eq(i).css("display", "block");
+        //     // $(".tab_list li").eq(i).addClass('on')
+        // });
+    </script>
 </body>
 
 </html>
