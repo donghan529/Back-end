@@ -25,17 +25,13 @@
     </div>
     <script>
         let img = document.querySelectorAll("img");
-        setInterval(moveSlide, 2000);
-
-        let i = 0;
-        function moveSlide() {
-            img[i].style.left = '0%';
-            setTimeout(function () {
+        setInterval(function () {
+            for (let i = 0; i <= img.length; i++) {
+                img[i].style.left = 0;
                 img[i].style.left = '100%';
-            }, 500);
-            i++;
-            if (i === 3) i = 0;
-        }
+                if (i == 2) i = 0;
+            }
+        }, 3000)
     </script>
 </body>
 

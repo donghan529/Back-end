@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            var scroll_pos = 0;
+            $(document).scroll(function () {
+                const arr = [100, 900, 1700, 2490, 3290, 4090]
+                scroll_pos = $(this).scrollTop();
+                console.log(scroll_pos);
+                for (let i = 0; i < arr.length; i++) {
+                    if (scroll_pos > arr[i]) {
+                        $("img").eq(i).css('opacity', 1)
+                    } else {
+                        $("img").eq(i).css('opacity', 0)
+                    }
+                }
+            })
+        });
+    </script>
+    <style>
+        body {
+            height: 5000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        img {
+            width: 466px;
+            height: 466px;
+            opacity: 0;
+            transition: 1s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>스크롤시 이미지가 나타납니다!</h1>
+    <img src="images/work1.jpg" alt="img1">
+    <img src="images/work2.jpg" alt="img2">
+    <img src="images/work3.jpg" alt="img3">
+    <img src="images/work4.jpg" alt="img4">
+    <img src="images/work5.jpg" alt="img5">
+    <img src="images/work6.jpg" alt="img6">
+
+</body>
+
+</html>
