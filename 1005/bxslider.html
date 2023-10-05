@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+    <style>
+        .bx-wrapper .bx-controls-direction a {
+            position: absolute;
+            top: 50%;
+            /*pager 세로위치를 고치려면*/
+            margin-top: -16px;
+            outline: 0;
+            width: 100px;
+            /*controls의 크기*/
+            height: 100px;
+            text-indent: -9999px;
+            z-index: 9999;
+        }
+
+        .slidewrap {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .bx-controls-direction .bx-prev {
+            left: 50px;
+            background: url(../연습/bx/images/btn_slide_prev.png) no-repeat;
+            background-size: 32px 32px;
+        }
+
+        .bx-controls-direction .bx-next {
+            right: 50px;
+            background: url(../연습/bx/images/btn_slide_next.png) no-repeat;
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slidewrap">
+        <div class="bxslider">
+            <div><img src="../연습/bx/img/images(1).jpg"></div>
+            <div><img src="../연습/bx/img/images(2).jpg"></div>
+            <div><img src="../연습/bx/img/images(3).jpg"></div>
+            <div><img src="../연습/bx/img/images(4).jpg"></div>
+            <div><img src="../연습/bx/img/images(5).jpg"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- bx슬라이더 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script>
+        $(function () {
+            $('.bxslider').bxSlider({
+                mode: 'fade',
+                auto: true,
+                slideWidth: 800
+            });
+        });
+    </script>
+</body>
+
+</html>

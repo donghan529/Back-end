@@ -13,6 +13,6 @@ public class A1004_ex34 {
             System.out.println(n);
 
         }
-
+        scanner.close();
     }
 }

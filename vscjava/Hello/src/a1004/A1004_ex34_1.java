@@ -13,7 +13,7 @@ public class A1004_ex34_1 {
         for (int i = 0; i < num.length; i++) {
 
             num[i] = scanner.nextInt();
-
+            
         }
 
         for (int i = 0; i < num.length; i++) {
@@ -21,5 +21,6 @@ public class A1004_ex34_1 {
             System.out.println(num[i]);
 
         }
+        scanner.close();
     }
 }

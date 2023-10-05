@@ -14,6 +14,6 @@ public class A1004_ex8 {
         } else {
             System.out.println("홀수입니다.");
         }
-
+        scanner.close();
     }
 }

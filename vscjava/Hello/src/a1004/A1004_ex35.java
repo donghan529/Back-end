@@ -18,5 +18,6 @@ public class A1004_ex35 {
             b += i;
         }
         System.out.println(b);
+        scanner.close();
     }
 }

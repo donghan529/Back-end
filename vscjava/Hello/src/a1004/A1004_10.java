@@ -18,5 +18,6 @@ public class A1004_10 {
 
         System.out.println();
         System.out.println("프로그램 종료");
+        scanner.close();
     }
 }

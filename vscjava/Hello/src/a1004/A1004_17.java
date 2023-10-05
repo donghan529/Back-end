@@ -40,6 +40,7 @@ public class A1004_17 {
             }
 
         }
+        scanner.close();
     }
 
 }

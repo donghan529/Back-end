@@ -12,6 +12,6 @@ public class A1004_ex9 {
         for (int i = 1; i <= 9; i++) {
             System.out.println(strNum + " x " + i + "= " + (strNum * i));
         }
-
+        scanner.close();
     }
 }

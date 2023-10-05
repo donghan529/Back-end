@@ -14,5 +14,6 @@ public class A1004_ex8_1 {
         } else {
             System.out.println(number + "는 홀수입니다.");
         }
+        scanner.close();
     }
 }
