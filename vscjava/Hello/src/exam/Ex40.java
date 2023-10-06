@@ -1,19 +1,18 @@
-package a1004;
+package exam;
 
 import java.util.Scanner;
 
-public class A1004_ex40 {
+public class Ex40 {
     public static void main(String[] args) {
-        
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("슬기가 던진 공의 위치>");
-        float num1 = scanner.nextFloat();
+        float ball = scanner.nextFloat();
 
-        if (num1>= 50 && num1<=60) {
-            System.out.println("win");
+        if (ball <= 60 && ball >= 50) {
+            System.out.println("Win");
         } else {
-            System.out.println("lose");
+            System.out.println("Lose");
         }
         scanner.close();
     }

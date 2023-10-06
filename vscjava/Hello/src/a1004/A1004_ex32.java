@@ -13,6 +13,9 @@ public class A1004_ex32 {
             case "B":
             System.out.println("good!!");
             break;
+            case "A":
+            System.out.println("best!!!");
+            break;
             default:
             System.out.println("what?");
             break;
