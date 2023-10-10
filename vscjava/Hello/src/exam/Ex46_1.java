@@ -11,9 +11,9 @@ public class Ex46_1 {
         for (int i = 0; i <= 2; i++) {
             tunnelHArray[i] = sc.nextInt();
             if (tunnelHArray[i] <= 170) {
-                System.out.println("PASS");
-            } else {
                 System.out.println("CRASH");
+            } else {
+                System.out.println("PASS");
             }
         }
         sc.close();

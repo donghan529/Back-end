@@ -9,10 +9,9 @@ public class Ex48 {
         String num = sc.nextLine();
         String first = num.substring(0, 2);
         String xy = num.substring(6);
-        System.out.println(xy);
         int age = 12-Integer.parseInt(first)+101;
+        int age2 = Integer.parseInt(first)-11;
         int xy1234 = Integer.parseInt(xy);
-        System.out.println(age);
         if(xy1234==1) {
             System.out.println("성별정보가 " + xy1234 + "이므로, 19" + first + "년생, "+ age + "살이다");
         } else if (xy1234==3) {
@@ -20,7 +19,7 @@ public class Ex48 {
         } else if (xy1234==2) {
             System.out.println("성별정보가 " + xy1234 + "이므로, 19" + first + "년생, "+ age + "살이다");
         } else if (xy1234==4) {
-            System.out.println("성별정보가 " + xy1234 + "이므로, 20" + num + "년생, "+ age + "살이다");
+            System.out.println("성별정보가 " + xy1234 + "이므로, 20" + first + "년생, "+ age2 + "살이다");
         } else {
             System.out.println("잘못입력하셨습니다.");
         }

@@ -12,9 +12,9 @@ public class Ex46 {
 
         for (int i = 0; i < tunnelHArray.length; i++) {
             if (tunnelHArray[i] <= 170) {
-                System.out.println("PASS");
-            } else {
                 System.out.println("CRASH");
+            } else {
+                System.out.println("PASS");
             }
         }
         sc.close();
