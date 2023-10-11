@@ -10,7 +10,7 @@ public class Ex52 {
         int num = sc.nextInt();
             if(num>=1 || num<=10) {
                 System.out.print(num);  
-                System.out.print(num1[num]);
+                System.out.print(num1[num-1]);
             }else if(num>=11 || num<=20) {
                 System.out.print(num);  
                 System.out.print(num1[(num-1)]);
@@ -35,7 +35,7 @@ public class Ex52 {
             }else if(num>=81 || num<=90) {
                 System.out.print(num);  
                 System.out.print(num1[num-1]);
-            }else if(num>=91 || num<=99) {
+            }else if(num>=91 || num<100) {
                 System.out.print(num);  
                 System.out.print(num1[num-1]);
             } else {

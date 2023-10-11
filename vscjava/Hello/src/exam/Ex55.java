@@ -19,5 +19,6 @@ public class Ex55 {
         } else {
             System.out.println("입력되는 정수는 0~100이다.");
         }
+        sc.close();
     }
 }
