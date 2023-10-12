@@ -17,5 +17,6 @@ public class Ex57 {
         } else if (total<=500) {
             System.out.println("no angry");
         }
+        sc.close();
     }
 }

@@ -22,6 +22,7 @@ public class Ex59 {
         int[] lotto = { num1, num2, num3, num4, num5, num6, num7 };
         int[] lottoNum = { lottoNum1, lottoNum2, lottoNum3, lottoNum4, lottoNum5, lottoNum6 };
         int total = 0;
+        int bns = 0;
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
                 if (lotto[i] == lottoNum[j]) {
@@ -29,23 +30,17 @@ public class Ex59 {
                 }
             }
         }
-        if (total == 5) {
         for (int i = 0; i < 6; i++) {
             if (lotto[6] == lottoNum[i]) {
-                System.out.println("2등입니다.");
-            } else {
-                System.out.println("3등입니다.");
+                bns++;
             }
         }
-    }
         if (total == 6) {
             System.out.println("1등");
-        } else if (total == 5) {
-            for (int j = 0; j < 6; j++) {
-                if (lotto[6] == lottoNum[j]) {
-
-                }
-            }
+        } else if (total == 5 && bns == 1) {
+            System.out.println("2등");
+        } else if (total == 5 && bns == 0) {
+            System.out.println("3등");
         } else if (total == 4) {
             System.out.println("4등");
         } else if (total == 3) {
@@ -53,5 +48,6 @@ public class Ex59 {
         } else if (total <= 2) {
             System.out.println("꽝");
         }
+
     }
 }
