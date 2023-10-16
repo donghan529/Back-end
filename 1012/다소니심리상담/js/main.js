@@ -1,3 +1,14 @@
+$(document).ready(function(){
+	$(".gnb_wrap,#gnb_bg").hover(function(){
+		$("#gnb_bg").addClass("open");
+		$(".gnb > ul > li > ul").addClass("open");
+	},function(){
+		$("#gnb_bg").removeClass("open");
+		$(".gnb > ul > li > ul").removeClass("open");
+	});
+	
+});
+
 $(function () {
     setTimeout(function () {
         $('.slider li .text0').addClass('on');
