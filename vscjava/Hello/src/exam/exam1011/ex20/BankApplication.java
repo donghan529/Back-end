@@ -2,8 +2,6 @@ package exam.exam1011.ex20;
 
 import java.util.Scanner;
 
-import a1011.aven.AcountTest;
-
 public class BankApplication {
     private static Account[] arr = new Account[100];
     private static Scanner sc = new Scanner(System.in);
@@ -49,11 +47,13 @@ public class BankApplication {
 
         Account newAcount = new Account(accountNumber, name, balance);
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == null) {
-                arr[i] = newAcount;
-                System.out.println("결과: 계좌가 생성되었습니다.");
-                break;
-            } 
+            if(!newAcount.getAccountNumber().equals(arr[i].getAccountNumber())){
+                if(arr[i] == null) {
+                    arr[i] = newAcount;
+                    System.out.println("결과: 계좌가 생성되었습니다.");
+                    break;
+                } 
+            }
             // if(accountNumber.equals(arr[i].getAccountNumber())) {
             //     System.out.println("중복계좌입니다.");
             // }
