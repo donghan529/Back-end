@@ -1,4 +1,5 @@
-
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700');
 
 * {
     margin: 0;
@@ -15,11 +16,10 @@ ul {
 }
 
 body {
+    font-family: 'NanumSquare', sans-serif;
     font-size: 16.5px;
     overflow-x: hidden;
-    width: 100%;
-    max-width: 1920px;
-    min-width: 1000px;
+    width: 1920px;
     height: 3000px;
 }
 
@@ -27,94 +27,109 @@ body {
     width: 100%;
 }
 
-/* 해더 */
+
 /* header */
 
-.header_line{
-	background:url("../img/header_line.png") no-repeat center 70%;
-	background-size:100% 2px;
-}
-.header_line > div > h1 { 
-	width:252px;
-	line-height:111px;
-	margin:auto;
+.header_line {
+    background: url("../img/header_line.png") no-repeat center 70%;
+    background-size: 100% 2px;
 }
 
-#gnb_bg{
-	width:100%;
-	height:0;
-	position:absolute;
-	left:0px;
-	top:161px;
-	background:#fff;
-	transition:all 0.4s;	
-	z-index:999;
-	border-top:1px solid #e0e0e0;
-}
-#gnb_bg.open{
-	height:335px;
-	background:#fff url("../img/header_line.png") no-repeat center top;
-	background-size:100% 2px;
-	border-top:0;
+.header_line>div>h1 {
+    width: 252px;
+    line-height: 111px;
+    margin: auto;
 }
 
-.gnb > ul {
+
+#gnb_bg {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0px;
+    top: 161px;
+    background: #fff;
+    transition: all 0.4s;
+    z-index: 999;
+    border-top: 1px solid #e0e0e0;
+}
+
+#gnb_bg.open {
+    height: 335px;
+    background: #fff url("../img/header_line.png") no-repeat center top;
+    background-size: 100% 2px;
+    border-top: 0;
+}
+
+.gnb>ul {
     margin: 0 auto;
-    width: 1200px;
+    width: 1000px;
     display: flex;
-}
-.gnb > ul > li {
-	position:relative;
-	width:20%;
-}
-.gnb > ul > li > a {
-	display:block;
-	padding:16px 24px;
-	font-size:1em;
-	text-align:center;
-	color:#333;
-	position:relative;
+    justify-content:space-between;
 }
 
-.gnb > ul > li >a:hover {
-	color:#000;
-}
-.gnb > ul > li > ul {
-	width:100%;
-	position:absolute;
-	height:0;
-	z-index:9991;
-	display:none;
-	top:64px;
-}
-.gnb > ul > li > ul.open{
-	display:block;
-}
-.gnb > ul > li > ul > li{
-	width:100%;
-	text-align:center;
-}
-.gnb > ul > li > ul > li a {
-	font-size:1em;	
-	display:inline-block;
-	padding:14px 10px;
-	line-height:1.2em;
-	color:#333;
-	text-align:center;	
-	font-weight:400;
-	letter-spacing:-0.025em;
+.gnb>ul>li {
+    position: relative;
+    width: 20%;
 }
 
-.gnb > ul > li > ul > li a:hover {
-	font-weight:bold;
-	background:url("../img/menu_hover.png") no-repeat center left;
+.gnb>ul>li>a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 1em;
+    text-align: center;
+    color: #333;
+    position: relative;
 }
+
+.gnb>ul>li>a:hover {
+    color: #000;
+}
+
+.gnb>ul>li>ul {
+    width: 100%;
+    position: absolute;
+    height: 0;
+    z-index: 9991;
+    display: none;
+    top: 64px;
+}
+
+.gnb>ul>li>ul.open {
+    display: block;
+}
+
+.gnb>ul>li>ul>li {
+    width: 100%;
+    text-align: center;
+}
+
+.gnb>ul>li>ul>li a {
+    font-size: 1em;
+    display: inline-block;
+    padding: 14px 10px;
+    line-height: 1.2em;
+    color: #333;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+
+.gnb>ul>li>ul>li a:hover {
+    font-weight: bold;
+    background: url("../img/menu_hover.png") no-repeat center left;
+}
+
 /* 슬라이드 */
 
 #s1 {
     width: 100%;
     height: 840px;
     position: relative;
+}
+
+.slider {
+    width: 1460px;
 }
 
 .s1_tbox {
