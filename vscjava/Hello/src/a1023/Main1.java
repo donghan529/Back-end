@@ -1,9 +1,11 @@
 package a1023;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import a1023.sec13.Transaction;
@@ -43,19 +45,83 @@ public class Main1 {
         .collect(Collectors.toList());
     System.out.println(cities);
 
-    // 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하시오 모든 거래자의 이름을 알파벳순으로 정리해서 반환하시오 밀라노에 거래자가있는가?
-    // 케임브리지에 거주하는 거래자의 모든 트랜잭션값을 출력하시오 전체 트랜잭션 중 최댓값은 얼마인가? 전체 트랜잭션 중 최솟값은 얼마인가?
+    List<String> Cambridge_traders = transactions.stream()
+        .map(Transaction::getTrader) // Transaction 객체를 Trader 객체로 변환(3.객체변환)
+        .filter(s -> s.getCity().equals("Cambridge"))
+        .map(s -> s.getName()) // 각 거래자의 이름만을 추출(정보를 추출)
+        .distinct()
+        .sorted()
+        .collect(Collectors.toList());
+    System.out.println("Cambridge_traders : " + Cambridge_traders);
 
-    List<String> TransactionAll = transactions.stream()
-      .map(trader -> Trader.getCity.equals("Cambridge"))
-      .sorted()
-      .forEach()
-     
-      
+    List<String> quiz3 = transactions.stream()
+        .filter(transaction -> ("Cambridge").equals(transaction.getTrader().getCity()))
+        .map(transaction -> transaction.getTrader().getName())
+        .distinct()
+        .sorted()
+        .collect(Collectors.toList());
+    quiz3.forEach(n -> System.out.println(n.toString()));
 
-      String max = transactions.stream()
-        .max(Transaction.getValue)
-        .get();
+    // 모든 거래자의 이름을 알파벳순으로 정리해서 반환하시오
+    String quiz4 = transactions.stream()
+        .map(transaction -> transaction.getTrader().getName())
+        .sorted()
+        .distinct()
+        .reduce("", (s1, s2) -> s1 + s2 + " ");
+    System.out.println(quiz4);
+
+    List<String> quiz4_1 = transactions.stream()
+        .map(transaction -> transaction.getTrader().getName())
+        .distinct()
+        .sorted()
+        .collect(Collectors.toList());
+    quiz4_1.forEach(System.out::println);
+
+    // 밀라노에 거래자가있는가?
+    boolean quiz5 = transactions.stream()
+        .anyMatch(transaction -> "Milan".equals(transaction.getTrader().getCity()));
+    System.out.println(quiz5);
+
+    boolean milanTraderExists = transactions.stream()
+        .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
+    System.out.println("Milan trader exists: " + milanTraderExists);
+
+    // 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하시오
+    // 케임브리지에 거주하는 거래자의 모든 트랜잭션값을 출력하시오
+    List<Integer> quiz6 = transactions.stream()
+        .filter(transaction -> ("Cambridge").equals(transaction.getTrader().getCity()))
+        .map(Transaction::getValue)
+        .collect(Collectors.toList());
+    System.out.println(quiz6);
+
+    transactions.stream()
+        .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+        .forEach(transaction -> System.out.println(transaction.getValue()));
+
+    // 전체 트랜잭션 중 최댓값은 얼마인가?
+    int max1 = transactions.stream()
+        .map(Transaction::getValue)
+        .max(Integer::compareTo)
+        .orElse(0);
+    System.out.println("Max Transaction Value: " + max1);
+
+    // Optional
+    Optional<Integer> quiz7 = Optional.ofNullable(transactions.stream().map(transaction -> transaction.getValue())
+        .reduce(0, (integer, integer2) -> Integer.max(integer, integer2)));
+    System.out.println(quiz7);
+
+    List<Transaction> transactions1 = new ArrayList<>();
+    Optional<Integer> quiz7_1 = Optional.ofNullable(transactions1.stream().map(transaction -> transaction.getValue())
+        .reduce(0, (integer, integer2) -> Integer.max(integer, integer2)));
+    System.out.println(quiz7_1);
+
+    // 전체 트랜잭션 중 최솟값은 얼마인가?
+    int min1 = transactions.stream()
+        .map(Transaction::getValue)
+        .min(Integer::compareTo)
+        .orElse(0);
+    System.out.println("Max Transaction Value: " + min1);
+
     /*
      * map은 Java 스트림에서 요소를 변환하거나 매핑하는 데 사용되는 중요한 연산자 중 하나입니다. map 연산자는 스트림 내의 각 요소를
      * 새로운 값으로 변환하거나 특정 함수 또는 매핑 작업을 적용하는 데 사용됩니다. 다음은 map을 사용하는 일반적인 상황과 용도입니다:
