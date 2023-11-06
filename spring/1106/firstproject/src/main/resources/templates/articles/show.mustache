@@ -1,0 +1,32 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#article}}
+                <tr>
+                    <th>{{id}}</th>
+                    <td>{{title}}</td>
+                    <td>{{content}}</td>
+                </tr>
+        {{/article}}
+    <!-- 반복문 역할 -->
+    <!--
+        <tr th:each="article : ${articleList}">
+        <th th:text="${article.id}"></th>
+        <td th:text="${article.title}"></td>
+        <td th:text="${article.content}"></td>
+    </tr>
+      -->
+    </tbody>
+</table>
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<!--삭제링크추가-->
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">Delete</a>
+<a href="/articles">Go To Article List</a>
+{{>layouts/footer}}
