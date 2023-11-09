@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <script>
+    <!-- <script>
       //모달 요소 선택
       const modal = document.querySelector("#exampleModal");
       
@@ -50,7 +50,33 @@
       document.querySelector("#modal-text").innerText = text;
       });
 
-    </script>
+    </script> -->
+    <script>
+      //모달 요소 선택
+      const modalDiv = document.querySelector("#exampleModal");
+
+      //모달 이벤트 감지
+      modalDiv.addEventListener("show.bs.modal",function(event){
+      //부트스트랩에서 모달을 사용할때, 모달이 열릴때 show.bs.modal 이벤트 발생
+      //event.relatedTarget은 모달을 열대된 요소를 나타낸다.(버튼)
+      //이를 통해서 모달을 여는 버튼의 정보를 가져올수 있다.
+      //트리거 버튼
+        const triggerBtn = event.relatedTarget;
+      console.log("버튼이 클릭되었습니다.")
+
+      //변경 대상 가져오기
+      const modalTittle = document.querySelector("#modal-title");
+      const modalText = document.querySelector("#modal-text");
+
+      //데이터 가져오기
+      const title = triggerBtn.getAttribute("data-custom-title");
+      const text = triggerBtn.getAttribute("data-custom-text");
+
+      //값변경
+      modalTittle.innerText = title;
+      modalText.innerText = text;
+    });
+  </script>
 </body>
 
 </html>
