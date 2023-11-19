@@ -38,7 +38,8 @@ public class SecurityConfig {
         //authenticated() 인증된 사용자만이 해당 요청에 접근
 
         http.exceptionHandling()
-                .authenticationEntryPoint(new CustomAuthenticationEntryPoint());
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+        ;
 
         return http.build();
     }
