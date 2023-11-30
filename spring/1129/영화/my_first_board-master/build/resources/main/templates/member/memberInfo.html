@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid py-4" style="background-color: #ccffcc ">
+    <a href="board.html"  th:href="@{/board}" style="text-decoration: none">
+        <h1 style="color: black" >&#x1F3E0; Board Service</h1>
+    </a>
+</div>
+<br>
+
+<div class="container" style="max-width: 600px">
+    <div class="py-3 text-center">
+        <h1 class="font-monospace-bold" th:text="#{title.member.info}">회원 정보</h1>
+    </div>
+    <!-- 추가 -->
+    <h5 class="text-primary text-start" th:if="${param.status}" th:text="#{text.editComplete}">수정 완료</h5>
+
+    <div>
+        <label for="loginId" th:text="#{label.member.loginId}">아이디</label>
+        <input type="text" id="loginId" name="loginId" class="form-control"
+               value="아이디" th:value="${member.loginId}" readonly>
+    </div>
+    <div>
+        <label for="name" th:text="#{label.member.name}">이름</label>
+        <input type="text" id="name" name="name" class="form-control"
+               value="이름" th:value="${member.name}" readonly>
+    </div>
+    <div>
+        <label for="nickname" th:text="#{label.member.nickname}">닉네임</label>
+        <input type="text" id="nickname" name="nickname" class="form-control"
+               value="닉네임" th:value="${member.nickname}" readonly>
+    </div>
+    <div>
+        <label for="email" th:text="#{label.member.email}">email</label>
+        <input type="text" id="email" name="email" class="form-control"
+               value="이메일" th:value="${member.email}" readonly>
+    </div>
+
+
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    onclick="location.href='editForm.html'"
+                    th:onclick="|location.href='@{/member/info/{loginId}/edit(loginId=${member.loginId})}'|"
+                    th:text="#{button.update}"
+                    type="button">정보 수정</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    onclick="location.href='editPasswordForm.html'"
+                    th:onclick="|location.href='@{/member/info/{loginId}/editpassword(loginId=${member.loginId})}'|"
+                    th:text="#{button.editPassword}"
+                    type="button">비밀번호 변경</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    onclick="location.href='board.html'"
+                    th:onclick="|location.href='@{/member/info}'|"
+                    th:text="#{button.back}"
+                    type="button">돌아가기</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

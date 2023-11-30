@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container text-center" style="max-width: 400px">
+    <br>
+    <h2 th:text="#{title.BoardService}">게시판 Home</h2>
+    <div>(Java, Spring, Thymeleaf)</div>
+
+    <div class="row py-3">
+        <div class="col">
+            <button class="btn btn-secondary btn-lg float-md-none" type="button"
+                    th:onclick="|location.href='@{/board}'|"
+                    th:text="#{button.main}">
+                게시판 Main으로 이동
+            </button>
+        </div>
+
+    </div>
+
+</div> <!-- /container -->
+</body>
+</html>

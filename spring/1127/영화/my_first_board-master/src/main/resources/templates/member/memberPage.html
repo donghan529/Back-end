@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid py-4" style="background-color: #ccffcc ">
+    <a href="board.html"  th:href="@{/board}" style="text-decoration: none">
+        <h1 style="color: black" >&#x1F3E0; Board Service</h1>
+    </a>
+</div>
+<br>
+
+<div class="container text-center" style="max-width: 600px">
+    <div class="py-1">
+        <h2 th:text="#{title.member.info}">회원 정보</h2>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <h5 class="d-inline-block" th:text="|${member.name} #{text.hello} |">환영합니다!&nbsp;</h5>
+        </div>
+        <div class="col text-end">
+            <button class="btn-sm btn-secondary py-1"
+                    onclick="location.href='editForm.html'"
+                    th:onclick="|location.href='@{/member/info/{loginId}(loginId=${member.loginId})}'|"
+                    th:text="#{button.member.info}"
+                    type="button">개인정보</button>
+
+            <form class="d-inline-block" th:action="@{/logout}" method="post"
+                  onsubmit="return confirm('로그아웃 하시겠습니까?');">
+                <button class="w-100 btn btn-outline-danger btn-sm" th:text="#{text.logout}" type="submit">
+                    로그아웃
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <hr class="my-3">
+
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-md "
+                    onclick="location.href='findPosts.html'"
+                    th:onclick="|location.href='@{/board(searchCode='writerId', searchWord=${member.loginId})}'|"
+                    th:text="#{button.member.writing}"
+                    type="button">내가 쓴 글</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-md "
+                    onclick="location.href='writeForm.html'"
+                    th:onclick="|location.href='@{/board/write-form}'|"
+                    th:text="#{button.writing}"
+                    type="button">글쓰기</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
