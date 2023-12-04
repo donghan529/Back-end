@@ -26,8 +26,10 @@ public class SecurityConfig {
         ;
 
         http.authorizeRequests()
+                .antMatchers("/csCenter/asSubmit").permitAll()
+                .antMatchers("/csCenter/notices").permitAll()
                 .mvcMatchers("/css/**", "/js/**", "/img/**").permitAll()
-                .mvcMatchers("/", "/members/**", "/item/**", "/images/**", "/faq/**").permitAll()
+                .mvcMatchers("/", "/members/**", "/item/**", "/images/**", "/**").permitAll()
                 .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
         //static 밑에 css, js, img 폴더는 접근 권한을 줌
