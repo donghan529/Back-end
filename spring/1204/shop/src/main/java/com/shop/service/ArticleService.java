@@ -60,4 +60,9 @@ public class ArticleService {
     public Page<Article> getArticlePage(ArticleSearchDto articleSearchDto, Pageable pageable) {
         return articleRepository.getArticlePage(articleSearchDto, pageable);
     }
+
+    public void deleteArticles(List<Long> selectedArticles) {
+        List<Article> articles = articleRepository.findAllById(selectedArticles);
+        articleRepository.deleteAll(articles);
+    }
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+사용자 스크립트 추가
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+
+    </script>
+</th:block>
+
+
+<div th:replace="fragments/header::header"></div>
+
+<div layout:fragment="content">
+
+    <form th:action="@{'/faq/faq'}" role="form" method="get" th:object="${faqs}">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>번호</td>
+                <td>문의유형</td>
+                <td>자주묻는질문</td>
+                <td>자주묻는답변</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="faqs : ${faqs}">
+                <td th:text="${faqs.id}"></td>
+                <td th:text="${faqs.faqType}"></td>
+                <td th:text="${faqs.faqQuestion}"></td>
+                <td th:text="${faqs.faqAnswer}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <ul class="pagination">
+                <!-- Iterate over page numbers -->
+                <li class="page-item" th:each="pageNumber : ${pageNumbers}" th:class="${pageNumber == currentPage} ? 'page-item active' : 'page-item'">
+                    <a class="page-link" th:href="@{${pageNumber}}" th:text="${pageNumber}"></a>
+                </li>
+                <!-- End of page number iteration -->
+            </ul>
+        </div>
+        <div class="text-center">
+            <a href="/admin/faq/new" class="btn btn-primary">FAQ등록</a>
+        </div>
+    </form>
+
+</div>
+<div th:replace="fragments/footer::footer"></div>
+</html>
